@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 using std::cout;
 using std::endl;
@@ -21,7 +22,7 @@ int main()
 
     int size = sizeof(questions)/sizeof(questions[0]);
     char guess;
-    int score;
+    int score = 0; // Make sure to add = 0 to give point to initialize
 
     for(int i = 0; i < size; i++)
     {
@@ -54,7 +55,7 @@ int main()
     cout << "**************************" << endl;
     cout << "CORRECT GUESSES: " << score << endl;
     cout << "# of QUESTIONS: " << size << endl;
-    cout << "SCORE: " << (score/(double)size)*100 << "%" << endl;
+    cout << "SCORE: " << std::fixed << std::setprecision(2) << (score/(double)size)*100 << "%" << endl;
 
     return 0;
 }  
